@@ -1,3 +1,1 @@
 This is a simple React App designed to generate maps for Realtors. It takes in an address and desired map shape and will return a map from the Google Static Maps API. You can then download the map for use. 
-
-To use the Google Static Maps API you need to obtain an API key. This project is currently setup to use a config.js file in the src folder to store the API key on your local server and then to import that key into the App.js file. 

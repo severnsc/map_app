@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
-//Setup a config file with the API Key
-import {config} from './config.js';
+import runtimeEnv from '@mars/heroku-js-runtime-env';
+const env = runtimeEnv();
 
 class App extends Component {
 
@@ -19,7 +19,7 @@ class App extends Component {
 
   createURL(address){
     const safeAddress = encodeURIComponent(address)
-    return "https://maps.googleapis.com/maps/api/staticmap?center=" + safeAddress + "&zoom=15&size=" + this.state.size + "&maptype=roadmap&markers=color:red|" + safeAddress + "&key=" + config.API_KEY
+    return "https://maps.googleapis.com/maps/api/staticmap?center=" + safeAddress + "&zoom=15&size=" + this.state.size + "&maptype=roadmap&markers=color:red|" + safeAddress + "&key=" + env.REACT_APP_API_KEY
   }
 
   handleSubmit(event){
