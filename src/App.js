@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
+import config from 'config';
 
 class App extends Component {
 
@@ -17,7 +18,7 @@ class App extends Component {
 
   createURL(address){
     const safeAddress = encodeURIComponent(address)
-    return "https://maps.googleapis.com/maps/api/staticmap?center=" + safeAddress + "&zoom=15&size=" + this.state.size + "&maptype=roadmap&markers=color:red|" + safeAddress + "&key=AIzaSyBfk5WgVcy7AmNR6VbQ6KWFoI5TNvsZDjI"
+    return "https://maps.googleapis.com/maps/api/staticmap?center=" + safeAddress + "&zoom=15&size=" + this.state.size + "&maptype=roadmap&markers=color:red|" + safeAddress + "&key=" + config.API_KEY
   }
 
   handleSubmit(event){
