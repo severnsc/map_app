@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
+//Setup a config file with the API Key
 import {config} from './config.js';
 
 class App extends Component {
