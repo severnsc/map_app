@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import runtimeEnv from '@mars/heroku-js-runtime-env';
+import logo from './agency_logo.png'
 const env = runtimeEnv();
 
 class App extends Component {
@@ -43,34 +44,30 @@ class App extends Component {
     }
     return (
       <div className="App">
-        <form onSubmit={this.handleSubmit}>
-          <input 
-            type="text" 
-            value={this.state.value}
-            onChange={this.handleChange}
-          />
-          <input
-            type="radio"
-            name="aspectRatio"
-            value="640x360"
-            onClick={this.setSize}
-          />Wide
-          <input
-            type="radio"
-            name="aspectRatio"
-            value="640x640"
-            onClick={this.setSize}
-          />Square
-           <input 
-            type="submit"
-            value="Submit"
-          />
-        </form>
-        <img 
-          src={this.state.url}
-          alt={this.state.value}
-        />
-        {downloadButton}
+        <div className="App-header">
+          <img src={logo} alt="Agency Luxe logo" />
+        </div>
+        <div className="App-body">
+          <h2>Map Generator</h2>
+          <p>Enter an address and city into the box below. Then select whether you want a wide (16:9) image or a square one. The map generator will create a map image with a pin droped at the specified address.</p>
+          <form onSubmit={this.handleSubmit} className="Form">
+            <ul>
+              <li>
+                <input type="text" value={this.state.value} onChange={this.handleChange} />
+              </li>
+              <li>
+                <p>Aspect Ratio:</p>
+                <input type="radio" name="aspectRatio" value="640x360" onClick={this.setSize} /><label>Wide</label>
+                <input type="radio" name="aspectRatio" value="640x640" onClick={this.setSize} /><label>Square</label>
+              </li>
+              <li>
+                <input type="submit" value="Submit" />
+              </li>
+            </ul>
+          </form>
+          <img src={this.state.url} alt={this.state.value} />
+          {downloadButton}
+        </div>
       </div>
     );
   }
