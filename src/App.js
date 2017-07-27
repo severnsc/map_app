@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import config from 'config';
+import {config} from './config.js';
 
 class App extends Component {
 
