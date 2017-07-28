@@ -131,6 +131,7 @@ ul{
 .App-body a button{
   font-size: 1.25em;
   border-radius:5px;
+  background-color: white;
 }
 
 .App-body p{
