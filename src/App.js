@@ -51,12 +51,13 @@ class App extends Component {
           <h2>Map Generator</h2>
           <p>Enter an address and city into the box below. Then select whether you want a wide (16:9) image or a square one. The map generator will create a map image with a pin droped at the specified address.</p>
           <form onSubmit={this.handleSubmit} className="Form">
-            <ul>
-              <li>
+            <ul className="flex-container">
+              <li className="address">
+                <label>Address</label>
                 <input type="text" value={this.state.value} onChange={this.handleChange} />
               </li>
-              <li>
-                <p>Aspect Ratio:</p>
+              <li className="radios">
+                <span>Aspect Ratio:</span>
                 <input type="radio" name="aspectRatio" value="640x360" onClick={this.setSize} /><label>Wide</label>
                 <input type="radio" name="aspectRatio" value="640x640" onClick={this.setSize} /><label>Square</label>
               </li>
